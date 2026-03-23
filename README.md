@@ -1,65 +1,89 @@
-# Browser-Proxy-Incident-Analysis
-Investigation of proxy interference and authentication anomalies caused by a browser VPN extension
-# 🔐 Browser Proxy Interference Incident Analysis
+Browser Proxy Interference Incident Analysis
 
-## 📌 Summary
-This project documents a real-world investigation into a browser-based proxy issue that caused connectivity failures and suspicious authentication behavior when accessing Gmail.
+This project demonstrates real-world detection and remediation of suspicious browser behavior involving proxy interference and authentication anomalies.
+
+---
+ Overview
+This project documents a real-world security investigation into abnormal browser behavior encountered while attempting to access Gmail. The issue presented as connectivity failures combined with an unexpected authentication prompt, indicating potential traffic interception or proxy misconfiguration.
 
 ---
 
-## 🚨 Initial Symptoms
-- Gmail returned: `ERR_FAILED`
-- Unexpected browser login prompt appeared
-- Proxy-related error: `ERR_PROXY_CONNECTION_FAILED`
-<img width="712" height="334" alt="Screenshot 2026-03-21 at 1 28 22 PM" src="https://github.com/user-attachments/assets/154e3f63-07e1-44bd-907f-1bddd10fe264" />
-<img width="611" height="405" alt="Screenshot 2026-03-21 at 1 35 31 PM" src="https://github.com/user-attachments/assets/c536c72a-8fc2-49be-8988-5b0a3ad80457" />
+Objective
+To investigate and identify the root cause of browser-based connectivity and authentication anomalies, determine potential security risks, and implement a safe remediation.
 
 ---
 
-## 🔍 Investigation Steps
+Initial Symptoms
+- Gmail returned error: `ERR_FAILED`
+- Unexpected browser-based login prompt appeared (non-standard for Google authentication)
+- Proxy-related error observed: `ERR_PROXY_CONNECTION_FAILED`
 
-### 1. Verified System Proxy Settings
-- Navigated to macOS Network → Proxies
-- Confirmed all proxy settings were disabled
+Evidence
+[Gmail Error](https://github.com/user-attachments/assets/154e3f63-07e1-44bd-907f-1bddd10fe264)
 
-### 2. Analyzed Browser Behavior
-- Identified that issue persisted despite clean system settings
-- Hypothesized browser-level interference
-
-### 3. Reviewed Chrome Extensions
-- Located active VPN extension: SetupVPN
-- Recognized it could route traffic through proxy servers
+[Proxy Error](https://github.com/user-attachments/assets/c536c72a-8fc2-49be-8988-5b0a3ad80457)
 
 ---
 
-## ⚠️ Findings
-- SetupVPN extension was injecting proxy configurations at the browser level
-- Caused failed connections and abnormal authentication prompts
-- Mimicked behavior similar to traffic interception scenarios
+Investigation Process
+
+1. System-Level Proxy Validation
+- Reviewed macOS Network → Proxy settings  
+- Confirmed all proxy configurations were disabled  
+- Ruled out system-level proxy misconfiguration  
+
+2. Behavioral Analysis
+- Observed continued failure despite clean system configuration  
+- Identified inconsistency between expected Gmail authentication flow and observed login prompt  
+- Hypothesized browser-level interference  
+
+3. Extension Analysis
+- Audited installed Chrome extensions  
+- Identified active VPN extension: **SetupVPN**  
+- Determined extension was routing traffic through external proxy infrastructure  
 
 ---
 
-## 🛠️ Remediation
-- Disabled and removed SetupVPN extension
-- Restarted browser
-- Retested Gmail access → Issue resolved
+Findings
+- SetupVPN extension introduced browser-level proxy routing independent of system settings  
+- Caused:
+  - Network connectivity failures  
+  - Authentication anomalies  
+  - Proxy connection errors  
+- Behavior mimicked characteristics of potential traffic interception scenarios  
 
 ---
 
-## 🧠 Key Takeaways
-- Browser extensions can override system-level network configurations
-- Unexpected login prompts should always be treated as suspicious
-- Proxy errors + authentication anomalies may indicate interception risks
+Remediation Actions
+- Disabled and removed SetupVPN Chrome extension  
+- Restarted browser session  
+- Re-tested Gmail access via direct URL entry  
+
+Result
+- Gmail access restored successfully  
+- No further authentication anomalies observed  
+- Proxy errors resolved  
 
 ---
 
-## 🧩 Skills Demonstrated
-- Threat detection & analysis
-- Root cause identification
-- Network troubleshooting
-- Security awareness
+Key Security Insights
+- Browser extensions can override system-level network configurations  
+- Unexpected authentication prompts should be treated as potential credential harvesting attempts  
+- Proxy-related errors combined with login anomalies may indicate traffic manipulation risks  
 
 ---
+
+Skills Demonstrated
+- Threat detection & analysis  
+- Root cause analysis  
+- Network and browser-layer troubleshooting  
+- Security awareness and risk identification  
+- Incident documentation  
+
+---
+
+Author
+Andrea Allen
 
 ## 👩🏽‍💻 Author
 Andrea Allen
