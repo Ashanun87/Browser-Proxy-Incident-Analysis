@@ -11,6 +11,8 @@ This project documents a real-world investigation into a browser-based proxy iss
 - Gmail returned: `ERR_FAILED`
 - Unexpected browser login prompt appeared
 - Proxy-related error: `ERR_PROXY_CONNECTION_FAILED`
+<img width="712" height="334" alt="Screenshot 2026-03-21 at 1 28 22 PM" src="https://github.com/user-attachments/assets/154e3f63-07e1-44bd-907f-1bddd10fe264" />
+<img width="611" height="405" alt="Screenshot 2026-03-21 at 1 35 31 PM" src="https://github.com/user-attachments/assets/c536c72a-8fc2-49be-8988-5b0a3ad80457" />
 
 ---
 
